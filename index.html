@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syeda Ameena Zoya - Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .company {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date-location {
+            text-align: right;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .responsibilities li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .languages {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .language-tag {
+            background: #f8f9fa;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 2px solid #667eea;
+        }
+
+        .certificates {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .certificate-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .certificate-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .certificate-details {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .certificate-details li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .certificate-details li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .achievement {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        .degree {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .gpa {
+            color: #666;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+
+            .date-location {
+                text-align: left;
+                margin-top: 5px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SYEDA AMEENA ZOYA</h1>
+            <p class="subtitle">Data Analyst</p>
+            <div class="contact-info">
+                <span>📧 syedaameena920@gmail.com</span>
+                <span>📱 +91 7013855484</span>
+                <span>📍 Bengaluru, India</span>
+            </div>
+            <div class="contact-info" style="margin-top: 10px;">
+                <a href="https://www.linkedin.com/in/syeda-ameena-zoya/" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/SyedaZoya2/Zoya" target="_blank">💻 GitHub</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>SUMMARY</h2>
+                <p class="summary">
+                    Recent graduate with strong knowledge of data analysis, proficient in cleaning, organizing, and understanding data using tools like Power BI, SQL, and Excel. Eager to leverage analytical skills to help companies make data-driven decisions and uncover meaningful insights from complex datasets.
+                </p>
+            </section>
+
+            <section>
+                <h2>WORK EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Data Analyst Intern</div>
+                            <div class="company">CloudThat Technologies Pvt. Ltd.</div>
+                        </div>
+                        <div class="date-location">
+                            <div>June 2025 – August 2025</div>
+                            <div>Bangalore</div>
+                        </div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Gathered, cleaned, and validated datasets to ensure accuracy and consistency</li>
+                        <li>Conducted Exploratory Data Analysis (EDA) and applied statistical techniques to uncover insights</li>
+                        <li>Designed interactive dashboards and visual reports in Excel and Power BI for stakeholder presentations</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Python Intern</div>
+                            <div class="company">Akshaya Computers</div>
+                        </div>
+                        <div class="date-location">
+                            <div>August 2023 – October 2023</div>
+                        </div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Certified Python intern with hands-on experience in coding and problem-solving</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>EDUCATION</h2>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">PGDM in Data Science and Business Analytics</div>
+                            <div class="institution">ISBR Business School</div>
+                            <div style="color: #666; font-size: 0.95em;">AICTE Delhi</div>
+                        </div>
+                        <div class="date-location">
+                            <div>July 2024 – Present</div>
+                        </div>
+                    </div>
+                    <div class="gpa">
+                        1st Semester SGPA: 8.03 | 2nd Semester SGPA: 8.44
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">Bachelor of Commerce (Computer Application)</div>
+                            <div class="institution">Sri Sathya Sai Degree College</div>
+                            <div style="color: #666; font-size: 0.95em;">Sri Krishnadevaraya University, Penukonda, Andhra Pradesh</div>
+                        </div>
+                        <div class="date-location">
+                            <div>June 2021 – July 2024</div>
+                        </div>
+                    </div>
+                    <div class="gpa">
+                        CGPA: 8.00
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>SKILLS</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">MS Excel</div>
+                    <div class="skill-item">Power BI Dashboards</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Python Programming</div>
+                    <div class="skill-item">Supply Chain Management</div>
+                    <div class="skill-item">Project Management</div>
+                    <div class="skill-item">Time Management</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>CERTIFICATIONS</h2>
+                <div class="certificates">
+                    <div class="certificate-item">
+                        <div class="certificate-title">Data Analytics and Visualization - Accenture</div>
+                        <ul class="certificate-details">
+                            <li>Gained hands-on experience in data cleaning, transformation, and modeling to derive actionable insights</li>
+                            <li>Developed interactive data visualizations and crafted compelling data-driven stories tailored for client presentations</li>
+                        </ul>
+                    </div>
+
+                    <div class="certificate-item">
+                        <div class="certificate-title">SQL Certificate - Jobaaj Learnings</div>
+                        <ul class="certificate-details">
+                            <li>SQL queries for data extraction and analysis</li>
+                            <li>Hands-on experience with joins, functions, and subqueries</li>
+                            <li>Skilled in managing and querying relational databases</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>ACHIEVEMENTS</h2>
+                <div class="achievement">
+                    🏆 Second Position in Vendor Analysis Competition - Achieved 2nd place in a competitive vendor analysis challenge by leveraging data-driven evaluation techniques
+                </div>
+            </section>
+
+            <section>
+                <h2>LANGUAGES</h2>
+                <div class="languages">
+                    <span class="language-tag">English</span>
+                    <span class="language-tag">Telugu</span>
+                    <span class="language-tag">Hindi</span>
+                    <span class="language-tag">Kannada</span>
+                    <span class="language-tag">Urdu</span>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Syeda Ameena Zoya. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
